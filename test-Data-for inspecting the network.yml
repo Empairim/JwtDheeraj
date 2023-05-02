@@ -1,0 +1,6 @@
+93d9e1746260   dheerajthedev123/auth-backend:v1   "docker-entrypoint.s…"   About a minute ago   Up About a minute   0.0.0.0:8000->8000/tcp    mystifying_wright   
+09d5eedade07   8c2c38aa676e                       "/kube-vpnkit-forwar…"   7 minutes ago        Up 7 minutes                                  k8s_vpnkit-controller_vpnkit-controller_kube-system_10111a9d-2883-42ef-ab9a-474671106e5e_2178
+fc7575905161   99f89471f470                       "/storage-provisione…"   About an hour ago    Up About an hour                              k8s_storage-provisioner_storage-provisioner_kube-system_e9d997f6-3f57-49c6-95e2-65444b7253f5_40
+55dd5581a817   5d725196c1f4                       "kube-scheduler --au…"   About an hour ago    Up About an hour                              k8s_kube-scheduler_kube-scheduler-docker-desktop_kube-system_a31c4b29a6bb804ea33360ba0a65dc67_26
+90b40757006a   redis:latest                       "docker-entrypoint.s…"   30 hours ago         Up 30 hours         0.0.0.0:6379->6379/tcp    redis
+d838af4efb43   mongo:latest                       "docker-entrypoint.s…"   30 hours ago         Up 30 hours         0.0.0.0:6000->27017/tcp   mongo
