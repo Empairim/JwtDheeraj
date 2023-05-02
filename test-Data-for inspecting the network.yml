@@ -4,3 +4,806 @@ fc7575905161   99f89471f470                       "/storage-provisione…"   Abo
 55dd5581a817   5d725196c1f4                       "kube-scheduler --au…"   About an hour ago    Up About an hour                              k8s_kube-scheduler_kube-scheduler-docker-desktop_kube-system_a31c4b29a6bb804ea33360ba0a65dc67_26
 90b40757006a   redis:latest                       "docker-entrypoint.s…"   30 hours ago         Up 30 hours         0.0.0.0:6379->6379/tcp    redis
 d838af4efb43   mongo:latest                       "docker-entrypoint.s…"   30 hours ago         Up 30 hours         0.0.0.0:6000->27017/tcp   mongo
+
+
+                    "IPAMConfig": null,
+PS D:\Bootcamp-Labs\titus\JwtDheeraj> docker inspect 88d4274830f6
+[
+    {
+        "Id": "88d4274830f61cb08106baa536cf7d4eb7ddfe1d78f6df2074f8c2ca02714921",
+        "Created": "2023-05-02T21:34:35.4230885Z",
+        "Path": "docker-entrypoint.sh",
+        "Args": [
+            "redis-server"
+        ],
+        "State": {
+            "Status": "running",
+            "Running": true,
+            "Paused": false,
+            "Restarting": false,
+            "OOMKilled": false,
+            "Dead": false,
+            "Pid": 22673,
+            "ExitCode": 0,
+            "Error": "",
+            "StartedAt": "2023-05-02T21:34:38.0709675Z",
+            "FinishedAt": "0001-01-01T00:00:00Z"
+        },
+        "Image": "sha256:eca1379fe8b541831fd5ce4a252c263db0cef4efbfd428a94225dc020aaeb1af",
+        "ResolvConfPath": "/var/lib/docker/containers/88d4274830f61cb08106baa536cf7d4eb7ddfe1d78f6df2074f8c2ca02714921/resolv.conf",
+        "HostnamePath": "/var/lib/docker/containers/88d4274830f61cb08106baa536cf7d4eb7ddfe1d78f6df2074f8c2ca02714921/hostname",
+        "HostsPath": "/var/lib/docker/containers/88d4274830f61cb08106baa536cf7d4eb7ddfe1d78f6df2074f8c2ca02714921/hosts",
+        "LogPath": "/var/lib/docker/containers/88d4274830f61cb08106baa536cf7d4eb7ddfe1d78f6df2074f8c2ca02714921/88d4274830f61cb08106baa536cf7d4eb7ddfe1d78f6df2074f8c2ca02714921-json.log",
+        "Name": "/redis",
+        "RestartCount": 0,
+        "Driver": "overlay2",
+        "Platform": "linux",
+        "MountLabel": "",
+        "ProcessLabel": "",
+        "AppArmorProfile": "",
+        "ExecIDs": null,
+        "HostConfig": {
+            "Binds": [],
+            "ContainerIDFile": "",
+            "LogConfig": {
+                "Type": "json-file",
+                "Config": {}
+            },
+            "NetworkMode": "jwtdheeraj_default",
+            "PortBindings": {
+                "6379/tcp": [
+                    {
+                        "HostIp": "",
+                        "HostPort": "6379"
+                    }
+                ]
+            },
+            "RestartPolicy": {
+                "Name": "",
+                "MaximumRetryCount": 0
+            },
+            "AutoRemove": false,
+            "VolumeDriver": "",
+            "VolumesFrom": null,
+            "CapAdd": null,
+            "CapDrop": null,
+            "CgroupnsMode": "host",
+            "Dns": null,
+            "DnsOptions": null,
+            "DnsSearch": null,
+            "ExtraHosts": [],
+            "GroupAdd": null,
+            "IpcMode": "private",
+            "Cgroup": "",
+            "Links": null,
+            "OomScoreAdj": 0,
+            "PidMode": "",
+            "Privileged": false,
+            "PublishAllPorts": false,
+            "ReadonlyRootfs": false,
+            "SecurityOpt": null,
+            "UTSMode": "",
+            "UsernsMode": "",
+            "ShmSize": 67108864,
+            "Runtime": "runc",
+            "ConsoleSize": [
+                0,
+                0
+            ],
+            "Isolation": "",
+            "CpuShares": 0,
+            "Memory": 0,
+            "NanoCpus": 0,
+            "CgroupParent": "",
+            "BlkioWeight": 0,
+            "BlkioWeightDevice": null,
+            "BlkioDeviceReadBps": null,
+            "BlkioDeviceWriteBps": null,
+            "BlkioDeviceReadIOps": null,
+            "BlkioDeviceWriteIOps": null,
+            "CpuPeriod": 0,
+            "CpuQuota": 0,
+            "CpuRealtimePeriod": 0,
+            "CpuRealtimeRuntime": 0,
+            "CpusetCpus": "",
+            "CpusetMems": "",
+            "Devices": null,
+            "DeviceCgroupRules": null,
+            "DeviceRequests": null,
+            "KernelMemory": 0,
+            "KernelMemoryTCP": 0,
+            "MemoryReservation": 0,
+            "MemorySwap": 0,
+            "MemorySwappiness": null,
+            "OomKillDisable": false,
+            "PidsLimit": null,
+            "Ulimits": null,
+            "CpuCount": 0,
+            "CpuPercent": 0,
+            "IOMaximumIOps": 0,
+            "IOMaximumBandwidth": 0,
+            "Mounts": [
+                {
+                    "Type": "volume",
+                    "Source": "jwtdheeraj_redis",
+                    "Target": "/data",
+                    "VolumeOptions": {}
+                }
+            ],
+            "MaskedPaths": [
+                "/proc/asound",
+                "/proc/acpi",
+                "/proc/kcore",
+                "/proc/keys",
+                "/proc/latency_stats",
+                "/proc/timer_list",
+                "/proc/timer_stats",
+                "/proc/sched_debug",
+                "/proc/scsi",
+                "/sys/firmware"
+            ],
+            "ReadonlyPaths": [
+                "/proc/bus",
+                "/proc/fs",
+                "/proc/irq",
+                "/proc/sys",
+                "/proc/sysrq-trigger"
+            ]
+        },
+        "GraphDriver": {
+            "Data": {
+                "LowerDir": "/var/lib/docker/overlay2/3832cf759c9c2b1a58ea48ef1b922556f851dd90df3598109720d0a79bc8a77c-init/diff:/var/lib/docker/overlay2/186a9229dbe2322b51b3d74e2e27ec06efe999c7b5ec5540ce16e84775f72ff4/diff:/var/lib/docker/overlay2/ff75240eeb935e5872ae405ccadb8117787d0024ed6b04a29119d936d255ee27/diff:/var/lib/docker/overlay2/c2b94551d0a215afa2b2b7e1896b1939cf1460c3f4f9f64a2c3ab2cb9bd69a6c/diff:/var/lib/docker/overlay2/be95b00660fa829161ac11d4129e912bf95a3f041b9f4894228b59e0559ef02d/diff:/var/lib/docker/overlay2/17b5efe2e20126d8c248a75219ef91d42c60b64160cb0ea652c0d49f41344fb0/diff:/var/lib/docker/overlay2/949a327fa242c2a3b58e44645bc0c6d36f7034d251817e6b4838b673d83fa6e0/diff",
+                "MergedDir": "/var/lib/docker/overlay2/3832cf759c9c2b1a58ea48ef1b922556f851dd90df3598109720d0a79bc8a77c/merged",
+                "UpperDir": "/var/lib/docker/overlay2/3832cf759c9c2b1a58ea48ef1b922556f851dd90df3598109720d0a79bc8a77c/diff",
+                "WorkDir": "/var/lib/docker/overlay2/3832cf759c9c2b1a58ea48ef1b922556f851dd90df3598109720d0a79bc8a77c/work"
+            },
+            "Name": "overlay2"
+        },
+        "Mounts": [
+            {
+                "Type": "volume",
+                "Name": "jwtdheeraj_redis",
+                "Source": "/var/lib/docker/volumes/jwtdheeraj_redis/_data",
+                "Destination": "/data",
+                "Driver": "local",
+                "Mode": "z",
+                "RW": true,
+                "Propagation": ""
+            }
+        ],
+        "Config": {
+            "Hostname": "88d4274830f6",
+            "Domainname": "",
+            "User": "",
+            "AttachStdin": false,
+            "AttachStdout": true,
+            "AttachStderr": true,
+            "ExposedPorts": {
+                "6379/tcp": {}
+            },
+            "Tty": false,
+            "OpenStdin": false,
+            "StdinOnce": false,
+            "Env": [
+                "PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin",
+                "GOSU_VERSION=1.16",
+                "REDIS_VERSION=7.0.11",
+                "REDIS_DOWNLOAD_URL=http://download.redis.io/releases/redis-7.0.11.tar.gz",
+                "REDIS_DOWNLOAD_SHA=ce250d1fba042c613de38a15d40889b78f7cb6d5461a27e35017ba39b07221e3"
+            ],
+            "Cmd": [
+                "redis-server"
+            ],
+            "Image": "redis:latest",
+            "Volumes": {
+                "/data": {}
+            },
+            "WorkingDir": "/data",
+            "Entrypoint": [
+                "docker-entrypoint.sh"
+            ],
+            "OnBuild": null,
+            "Labels": {
+                "com.docker.compose.config-hash": "f66f468b59042a57a80b6501aba84d8e50e6c1c93c240a1c788cd780e04ca886",
+                "com.docker.compose.container-number": "1",
+                "com.docker.compose.depends_on": "",
+                "com.docker.compose.image": "sha256:eca1379fe8b541831fd5ce4a252c263db0cef4efbfd428a94225dc020aaeb1af",
+                "com.docker.compose.oneoff": "False",
+                "com.docker.compose.project": "jwtdheeraj",
+                "com.docker.compose.project.config_files": "D:\\Bootcamp-Labs\\titus\\JwtDheeraj\\docker-compose.yml",
+                "com.docker.compose.project.working_dir": "D:\\Bootcamp-Labs\\titus\\JwtDheeraj",
+                "com.docker.compose.service": "redis",
+                "com.docker.compose.version": "2.7.0"
+            }
+        },
+        "NetworkSettings": {
+            "Bridge": "",
+            "SandboxID": "203d7a85c3be6de81377f4b4a98720934313459408429db714ccdd6131167026",
+            "HairpinMode": false,
+            "LinkLocalIPv6Address": "",
+            "LinkLocalIPv6PrefixLen": 0,
+            "Ports": {
+                "6379/tcp": [
+                    {
+                        "HostIp": "0.0.0.0",
+                        "HostPort": "6379"
+                    }
+                ]
+            },
+            "SandboxKey": "/var/run/docker/netns/203d7a85c3be",
+            "SecondaryIPAddresses": null,
+            "SecondaryIPv6Addresses": null,
+            "EndpointID": "",
+            "Gateway": "",
+            "GlobalIPv6Address": "",
+            "GlobalIPv6PrefixLen": 0,
+            "IPAddress": "",
+            "IPPrefixLen": 0,
+            "IPv6Gateway": "",
+            "MacAddress": "",
+            "Networks": {
+                "jwtdheeraj_default": {
+                    "IPAMConfig": null,
+                    "Links": null,
+                    "Aliases": [
+                        "redis",
+                        "redis",
+                        "88d4274830f6"
+                    ],
+                    "NetworkID": "3f7bb754be22ba9bf0c5dc95f518b4341596208e6b475f00f0e793dcfd6ea29e",
+                    "EndpointID": "a7e636823d4c66726eced5a211c6732649714971582f25788f31d9db39e1e5c3",
+                    "Gateway": "172.19.0.1",
+                    "IPAddress": "172.19.0.2",
+                    "IPPrefixLen": 16,
+                    "IPv6Gateway": "",
+                    "GlobalIPv6Address": "",
+                    "GlobalIPv6PrefixLen": 0,
+                    "MacAddress": "02:42:ac:13:00:02",
+                    "DriverOpts": null
+                }
+            }
+        }
+    }
+]
+PS D:\Bootcamp-Labs\titus\JwtDheeraj> docker inspect ec2db1cdd981
+[
+    {
+        "Id": "ec2db1cdd981fc7f2ca43ec8c2c6ed5fd593bdd4a07558c463ee25c18e048ff8",
+        "Created": "2023-05-02T21:34:35.3900901Z",
+        "Path": "docker-entrypoint.sh",
+        "Args": [
+            "mongod"
+        ],
+        "State": {
+            "Status": "running",
+            "Running": true,
+            "Paused": false,
+            "Restarting": false,
+            "OOMKilled": false,
+            "Dead": false,
+            "Pid": 22816,
+            "ExitCode": 0,
+            "Error": "",
+            "StartedAt": "2023-05-02T21:34:38.6099185Z",
+            "FinishedAt": "0001-01-01T00:00:00Z"
+        },
+        "Image": "sha256:9a5e0d0cf6dea27fa96b889dc4687c317f3ff99f582083f2503433d534dfbba3",
+        "ResolvConfPath": "/var/lib/docker/containers/ec2db1cdd981fc7f2ca43ec8c2c6ed5fd593bdd4a07558c463ee25c18e048ff8/resolv.conf",
+        "HostnamePath": "/var/lib/docker/containers/ec2db1cdd981fc7f2ca43ec8c2c6ed5fd593bdd4a07558c463ee25c18e048ff8/hostname",
+        "HostsPath": "/var/lib/docker/containers/ec2db1cdd981fc7f2ca43ec8c2c6ed5fd593bdd4a07558c463ee25c18e048ff8/hosts",
+        "LogPath": "/var/lib/docker/containers/ec2db1cdd981fc7f2ca43ec8c2c6ed5fd593bdd4a07558c463ee25c18e048ff8/ec2db1cdd981fc7f2ca43ec8c2c6ed5fd593bdd4a07558c463ee25c18e048ff8-json.log",
+        "Name": "/mongo",
+        "RestartCount": 0,
+        "Driver": "overlay2",
+        "Platform": "linux",
+        "MountLabel": "",
+        "ProcessLabel": "",
+        "AppArmorProfile": "",
+        "ExecIDs": null,
+        "HostConfig": {
+            "Binds": [],
+            "ContainerIDFile": "",
+            "LogConfig": {
+                "Type": "json-file",
+                "Config": {}
+            },
+            "NetworkMode": "jwtdheeraj_default",
+            "PortBindings": {
+                "27017/tcp": [
+                    {
+                        "HostIp": "",
+                        "HostPort": "6000"
+                    }
+                ]
+            },
+            "RestartPolicy": {
+                "Name": "",
+                "MaximumRetryCount": 0
+            },
+            "AutoRemove": false,
+            "VolumeDriver": "",
+            "VolumesFrom": null,
+            "CapAdd": null,
+            "CapDrop": null,
+            "CgroupnsMode": "host",
+            "Dns": null,
+            "DnsOptions": null,
+            "DnsSearch": null,
+            "ExtraHosts": [],
+            "GroupAdd": null,
+            "IpcMode": "private",
+            "Cgroup": "",
+            "Links": null,
+            "OomScoreAdj": 0,
+            "PidMode": "",
+            "Privileged": false,
+            "PublishAllPorts": false,
+            "ReadonlyRootfs": false,
+            "SecurityOpt": null,
+            "UTSMode": "",
+            "UsernsMode": "",
+            "ShmSize": 67108864,
+            "Runtime": "runc",
+            "ConsoleSize": [
+                0,
+                0
+            ],
+            "Isolation": "",
+            "CpuShares": 0,
+            "Memory": 0,
+            "NanoCpus": 0,
+            "CgroupParent": "",
+            "BlkioWeight": 0,
+            "BlkioWeightDevice": null,
+            "BlkioDeviceReadBps": null,
+            "BlkioDeviceWriteBps": null,
+            "BlkioDeviceReadIOps": null,
+            "BlkioDeviceWriteIOps": null,
+            "CpuPeriod": 0,
+            "CpuQuota": 0,
+            "CpuRealtimePeriod": 0,
+            "CpuRealtimeRuntime": 0,
+            "CpusetCpus": "",
+            "CpusetMems": "",
+            "Devices": null,
+            "DeviceCgroupRules": null,
+            "DeviceRequests": null,
+            "KernelMemory": 0,
+            "KernelMemoryTCP": 0,
+            "MemoryReservation": 0,
+            "MemorySwap": 0,
+            "MemorySwappiness": null,
+            "OomKillDisable": false,
+            "PidsLimit": null,
+            "Ulimits": null,
+            "CpuCount": 0,
+            "CpuPercent": 0,
+            "IOMaximumIOps": 0,
+            "IOMaximumBandwidth": 0,
+            "Mounts": [
+                {
+                    "Type": "volume",
+                    "Source": "jwtdheeraj_mongo",
+                    "Target": "/data/db",
+                    "VolumeOptions": {}
+                }
+            ],
+            "MaskedPaths": [
+                "/proc/asound",
+                "/proc/acpi",
+                "/proc/kcore",
+                "/proc/keys",
+                "/proc/latency_stats",
+                "/proc/timer_list",
+                "/proc/timer_stats",
+                "/proc/sched_debug",
+                "/proc/scsi",
+                "/sys/firmware"
+            ],
+            "ReadonlyPaths": [
+                "/proc/bus",
+                "/proc/fs",
+                "/proc/irq",
+                "/proc/sys",
+                "/proc/sysrq-trigger"
+            ]
+        },
+        "GraphDriver": {
+            "Data": {
+                "LowerDir": "/var/lib/docker/overlay2/d8dfb99ae63254a16c312ceb2a3938ceb769a5119a74d1036213b23907f9be9c-init/diff:/var/lib/docker/overlay2/35f99eab05e7e45ebdc99b142fd83482049b10a7aa0476d1d03dfc4a286f1fc4/diff:/var/lib/docker/overlay2/7a40d650cdf3148ca732f71eeb3f0917722adfca00c70d147a24cb1c23eff788/diff:/var/lib/docker/overlay2/877d432253938e9ca6437238ef190e5a35c0b2d0df0ac5cbcb1a963e2a3832fa/diff:/var/lib/docker/overlay2/f78007fb5c4a34e1bf44a297866e2730819a5552ccb046fd536bd470fc075771/diff:/var/lib/docker/overlay2/8558ef1e5c0f0954a45ff2d4cb3366a8fec7705ab3d57a9d23fe2d9db19bb463/diff:/var/lib/docker/overlay2/ba37aa583841c76c9f41411e608923205a3fc70dc108dd9386110ea6d06c871b/diff:/var/lib/docker/overlay2/f44cf5d9456a56151abffa8dfa80780e7c49d1ccf2ed2fb082afa0693a40ea1c/diff:/var/lib/docker/overlay2/ea0b6eb3d0a986aa3e9c58cdb61d4a14dec25ef11906146160d933e741aa8e93/diff:/var/lib/docker/overlay2/b75902facdd463b8dbf0fb56442def52a3783bac045ad1f1ad6f0874a3207c7c/diff",
+                "MergedDir": "/var/lib/docker/overlay2/d8dfb99ae63254a16c312ceb2a3938ceb769a5119a74d1036213b23907f9be9c/merged",
+                "UpperDir": "/var/lib/docker/overlay2/d8dfb99ae63254a16c312ceb2a3938ceb769a5119a74d1036213b23907f9be9c/diff",
+                "WorkDir": "/var/lib/docker/overlay2/d8dfb99ae63254a16c312ceb2a3938ceb769a5119a74d1036213b23907f9be9c/work"
+            },
+            "Name": "overlay2"
+        },
+        "Mounts": [
+            {
+                "Type": "volume",
+                "Name": "jwtdheeraj_mongo",
+                "Source": "/var/lib/docker/volumes/jwtdheeraj_mongo/_data",
+                "Destination": "/data/db",
+                "Driver": "local",
+                "Mode": "z",
+                "RW": true,
+                "Propagation": ""
+            },
+            {
+                "Type": "volume",
+                "Name": "fbf70d3d5cfeb6928aec0683153489f4ac77ee6986c4abaf2191782902cef875",
+                "Source": "/var/lib/docker/volumes/fbf70d3d5cfeb6928aec0683153489f4ac77ee6986c4abaf2191782902cef875/_data",
+                "Destination": "/data/configdb",
+                "Driver": "local",
+                "Mode": "",
+                "RW": true,
+                "Propagation": ""
+            }
+        ],
+        "Config": {
+            "Hostname": "ec2db1cdd981",
+            "Domainname": "",
+            "User": "",
+            "AttachStdin": false,
+            "AttachStdout": true,
+            "AttachStderr": true,
+            "ExposedPorts": {
+                "27017/tcp": {}
+            },
+            "Tty": false,
+            "OpenStdin": false,
+            "StdinOnce": false,
+            "Env": [
+                "MONGO_INITDB_ROOT_USERNAME=dheerajthedev",
+                "MONGO_INITDB_ROOT_PASSWORD=password123",
+                "MONGO_INITDB_DATABASE=jwtAuth",
+                "PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin",
+                "GOSU_VERSION=1.16",
+                "JSYAML_VERSION=3.13.1",
+                "MONGO_PACKAGE=mongodb-org",
+                "MONGO_REPO=repo.mongodb.org",
+                "MONGO_MAJOR=6.0",
+                "MONGO_VERSION=6.0.5",
+                "HOME=/data/db"
+            ],
+            "Cmd": [
+                "mongod"
+            ],
+            "Image": "mongo:latest",
+            "Volumes": {
+                "/data/configdb": {},
+                "/data/db": {}
+            },
+            "WorkingDir": "",
+            "Entrypoint": [
+                "docker-entrypoint.sh"
+            ],
+            "OnBuild": null,
+            "Labels": {
+                "com.docker.compose.config-hash": "4e52c14723404b142b42f397dae40d6d900bc71d659002cb4777fb9aaa505129",
+                "com.docker.compose.container-number": "1",
+                "com.docker.compose.depends_on": "",
+                "com.docker.compose.image": "sha256:9a5e0d0cf6dea27fa96b889dc4687c317f3ff99f582083f2503433d534dfbba3",
+                "com.docker.compose.oneoff": "False",
+                "com.docker.compose.project": "jwtdheeraj",
+                "com.docker.compose.project.config_files": "D:\\Bootcamp-Labs\\titus\\JwtDheeraj\\docker-compose.yml",
+                "com.docker.compose.project.working_dir": "D:\\Bootcamp-Labs\\titus\\JwtDheeraj",
+                "com.docker.compose.service": "mongo",
+                "com.docker.compose.version": "2.7.0",
+                "org.opencontainers.image.ref.name": "ubuntu",
+                "org.opencontainers.image.version": "22.04"
+            }
+        },
+        "NetworkSettings": {
+            "Bridge": "",
+            "SandboxID": "c4b6ad741eb71937873016592962f0cf587d18dd19edb285870dfe23dbb7011a",
+            "HairpinMode": false,
+            "LinkLocalIPv6Address": "",
+            "LinkLocalIPv6PrefixLen": 0,
+            "Ports": {
+                "27017/tcp": [
+                    {
+                        "HostIp": "0.0.0.0",
+                        "HostPort": "6000"
+                    }
+                ]
+            },
+            "SandboxKey": "/var/run/docker/netns/c4b6ad741eb7",
+            "SecondaryIPAddresses": null,
+            "SecondaryIPv6Addresses": null,
+            "EndpointID": "",
+            "Gateway": "",
+            "GlobalIPv6Address": "",
+            "GlobalIPv6PrefixLen": 0,
+            "IPAddress": "",
+            "IPPrefixLen": 0,
+            "IPv6Gateway": "",
+            "MacAddress": "",
+            "Networks": {
+                "jwtdheeraj_default": {
+                    "IPAMConfig": null,
+                    "Links": null,
+                    "Aliases": [
+                        "mongo",
+                        "mongo",
+                        "ec2db1cdd981"
+                    ],
+                    "NetworkID": "3f7bb754be22ba9bf0c5dc95f518b4341596208e6b475f00f0e793dcfd6ea29e",
+                    "EndpointID": "f0139ccbbd9c1199e39bf83ae94c8df96603fc38b1a9f4ed7ba930285617383a",
+                    "Gateway": "172.19.0.1",
+                    "IPAddress": "172.19.0.4",
+                    "IPPrefixLen": 16,
+                    "IPv6Gateway": "",
+                    "GlobalIPv6Address": "",
+                    "GlobalIPv6PrefixLen": 0,
+                    "MacAddress": "02:42:ac:13:00:04",
+                    "DriverOpts": null
+                }
+            }
+        }
+    }
+]
+PS D:\Bootcamp-Labs\titus\JwtDheeraj> docker inspect 5f8333c46e92
+[
+    {
+        "Id": "5f8333c46e92afce4396c31eba17b55ad607161a5889ea21a2464c94235436a3",
+        "Created": "2023-05-02T21:34:35.3736049Z",
+        "Path": "docker-entrypoint.sh",
+        "Args": [
+            "npm",
+            "run",
+            "start"
+        ],
+        "State": {
+            "Status": "running",
+            "Running": true,
+            "Paused": false,
+            "Restarting": false,
+            "OOMKilled": false,
+            "Dead": false,
+            "Pid": 22745,
+            "ExitCode": 0,
+            "Error": "",
+            "StartedAt": "2023-05-02T21:34:38.58467Z",
+            "FinishedAt": "0001-01-01T00:00:00Z"
+        },
+        "Image": "sha256:c8069f5152a50a96ab3ce5e43d636f2b9abf1e65d4d594e430b6ec96eb856d53",
+        "ResolvConfPath": "/var/lib/docker/containers/5f8333c46e92afce4396c31eba17b55ad607161a5889ea21a2464c94235436a3/resolv.conf",
+        "HostnamePath": "/var/lib/docker/containers/5f8333c46e92afce4396c31eba17b55ad607161a5889ea21a2464c94235436a3/hostname",
+        "HostsPath": "/var/lib/docker/containers/5f8333c46e92afce4396c31eba17b55ad607161a5889ea21a2464c94235436a3/hosts",
+        "LogPath": "/var/lib/docker/containers/5f8333c46e92afce4396c31eba17b55ad607161a5889ea21a2464c94235436a3/5f8333c46e92afce4396c31eba17b55ad607161a5889ea21a2464c94235436a3-json.log",
+        "Name": "/backend",
+        "RestartCount": 0,
+        "Driver": "overlay2",
+        "Platform": "linux",
+        "MountLabel": "",
+        "ProcessLabel": "",
+        "AppArmorProfile": "",
+        "ExecIDs": null,
+        "HostConfig": {
+            "Binds": [],
+            "ContainerIDFile": "",
+            "LogConfig": {
+                "Type": "json-file",
+                "Config": {}
+            },
+            "NetworkMode": "jwtdheeraj_default",
+            "PortBindings": {
+                "8005/tcp": [
+                    {
+                        "HostIp": "",
+                        "HostPort": "8005"
+                    }
+                ]
+            },
+            "RestartPolicy": {
+                "Name": "",
+                "MaximumRetryCount": 0
+            },
+            "AutoRemove": false,
+            "VolumeDriver": "",
+            "VolumesFrom": null,
+            "CapAdd": null,
+            "CapDrop": null,
+            "CgroupnsMode": "host",
+            "Dns": null,
+            "DnsOptions": null,
+            "DnsSearch": null,
+            "ExtraHosts": [],
+            "GroupAdd": null,
+            "IpcMode": "private",
+            "Cgroup": "",
+            "Links": null,
+            "OomScoreAdj": 0,
+            "PidMode": "",
+            "Privileged": false,
+            "PublishAllPorts": false,
+            "ReadonlyRootfs": false,
+            "SecurityOpt": null,
+            "UTSMode": "",
+            "UsernsMode": "",
+            "ShmSize": 67108864,
+            "Runtime": "runc",
+            "ConsoleSize": [
+                0,
+                0
+            ],
+            "Isolation": "",
+            "CpuShares": 0,
+            "Memory": 0,
+            "NanoCpus": 0,
+            "CgroupParent": "",
+            "BlkioWeight": 0,
+            "BlkioWeightDevice": null,
+            "BlkioDeviceReadBps": null,
+            "BlkioDeviceWriteBps": null,
+            "BlkioDeviceReadIOps": null,
+            "BlkioDeviceWriteIOps": null,
+            "CpuPeriod": 0,
+            "CpuQuota": 0,
+            "CpuRealtimePeriod": 0,
+            "CpuRealtimeRuntime": 0,
+            "CpusetCpus": "",
+            "CpusetMems": "",
+            "Devices": null,
+            "DeviceCgroupRules": null,
+            "DeviceRequests": null,
+            "KernelMemory": 0,
+            "KernelMemoryTCP": 0,
+            "MemoryReservation": 0,
+            "MemorySwap": 0,
+            "MemorySwappiness": null,
+            "OomKillDisable": false,
+            "PidsLimit": null,
+            "Ulimits": null,
+            "CpuCount": 0,
+            "CpuPercent": 0,
+            "IOMaximumIOps": 0,
+            "IOMaximumBandwidth": 0,
+            "Mounts": [
+                {
+                    "Type": "volume",
+                    "Source": "jwtdheeraj_redis",
+                    "Target": "/data",
+                    "VolumeOptions": {}
+                }
+            ],
+            "MaskedPaths": [
+                "/proc/asound",
+                "/proc/acpi",
+                "/proc/kcore",
+                "/proc/keys",
+                "/proc/latency_stats",
+                "/proc/timer_list",
+                "/proc/timer_stats",
+                "/proc/sched_debug",
+                "/proc/scsi",
+                "/sys/firmware"
+            ],
+            "ReadonlyPaths": [
+                "/proc/bus",
+                "/proc/fs",
+                "/proc/irq",
+                "/proc/sys",
+                "/proc/sysrq-trigger"
+            ]
+        },
+        "GraphDriver": {
+            "Data": {
+                "LowerDir": "/var/lib/docker/overlay2/59519c208daad4b19d310e3f3edd979871ac1344ee7f618773eb15b8a97c59c7-init/diff:/var/lib/docker/overlay2/sqftwlpsmy4p4pvjludj3v53q/diff:/var/lib/docker/overlay2/taglj235mquembxncan25u4jb/diff:/var/lib/docker/overlay2/txuq2svjvrdlpy5wy216mo2wk/diff:/var/lib/docker/overlay2/bf74fe3ac6d5f5f05221202de5da84a063f7023d751baba6f7b0780f0ca08939/diff:/var/lib/docker/overlay2/b6aa601b8f760fa30530615ab55e40c82c730f49c8eaaaa9564bfd04b21cda05/diff:/var/lib/docker/overlay2/54d87967ed083b9645bd08cc808639901b79f0206b434ea62bd658f120f5d85d/diff:/var/lib/docker/overlay2/ebcee380d8d2cc5382045c658fca6f87abaaeb4fbe7f285548240dd323822bbd/diff:/var/lib/docker/overlay2/5dec4cefb3d3102359dc2fed7695be6483edd90ff7d716944f4b0647db5a94ba/diff:/var/lib/docker/overlay2/a4465c37088bbfa791609c0dd024264732d46ec119350a4a2c53fdb64894923d/diff:/var/lib/docker/overlay2/ec34b0f580053a74684bce0139e641a9df520ccf09dd81dc7a35c915c1fe8e71/diff:/var/lib/docker/overlay2/5a6d0ce354b3a41f222e87880a2d4bbc2691fcc6564f875d881322924c11d1e7/diff:/var/lib/docker/overlay2/ca6425cacbc67b16a229d16e616c65d27ec09871065a0063088f0c6c76161c9f/diff",
+                "MergedDir": "/var/lib/docker/overlay2/59519c208daad4b19d310e3f3edd979871ac1344ee7f618773eb15b8a97c59c7/merged",
+                "UpperDir": "/var/lib/docker/overlay2/59519c208daad4b19d310e3f3edd979871ac1344ee7f618773eb15b8a97c59c7/diff",
+                "WorkDir": "/var/lib/docker/overlay2/59519c208daad4b19d310e3f3edd979871ac1344ee7f618773eb15b8a97c59c7/work"
+            },
+            "Name": "overlay2"
+        },
+        "Mounts": [
+            {
+                "Type": "volume",
+                "Name": "jwtdheeraj_redis",
+                "Source": "/var/lib/docker/volumes/jwtdheeraj_redis/_data",
+                "Destination": "/data",
+                "Driver": "local",
+                "Mode": "z",
+                "RW": true,
+                "Propagation": ""
+            }
+        ],
+        "Config": {
+            "Hostname": "5f8333c46e92",
+            "Domainname": "",
+            "User": "",
+            "AttachStdin": false,
+            "AttachStdout": true,
+            "AttachStderr": true,
+            "ExposedPorts": {
+                "8000/tcp": {},
+                "8005/tcp": {}
+            },
+            "Tty": false,
+            "OpenStdin": false,
+            "StdinOnce": false,
+            "Env": [
+                "PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin",
+                "NODE_VERSION=20.0.0",
+                "YARN_VERSION=1.22.19",
+                "NODE_ENV=devlopment",
+                "SERVER_PORT=8000"
+            ],
+            "Cmd": [
+                "npm",
+                "run",
+                "start"
+            ],
+            "Image": "dheerajthedev123/auth-backend:v1",
+            "Volumes": {
+                "/data": {}
+            },
+            "WorkingDir": "/node/app",
+            "Entrypoint": [
+                "docker-entrypoint.sh"
+            ],
+            "OnBuild": null,
+            "Labels": {
+                "com.docker.compose.config-hash": "a94930289731b969ac5aa69ac91e051df8b275e7c44861ee9797c3af31961999",
+                "com.docker.compose.container-number": "1",
+                "com.docker.compose.depends_on": "",
+                "com.docker.compose.image": "sha256:c8069f5152a50a96ab3ce5e43d636f2b9abf1e65d4d594e430b6ec96eb856d53",
+                "com.docker.compose.oneoff": "False",
+                "com.docker.compose.project": "jwtdheeraj",
+                "com.docker.compose.project.config_files": "D:\\Bootcamp-Labs\\titus\\JwtDheeraj\\docker-compose.yml",
+                "com.docker.compose.project.working_dir": "D:\\Bootcamp-Labs\\titus\\JwtDheeraj",
+                "com.docker.compose.service": "backend",
+                "com.docker.compose.version": "2.7.0"
+            }
+        },
+        "NetworkSettings": {
+            "Bridge": "",
+            "SandboxID": "a9d50113335588f939cb827657dccae49294f271927b8da9f890d23ee8cca8bb",
+            "HairpinMode": false,
+            "LinkLocalIPv6Address": "",
+            "LinkLocalIPv6PrefixLen": 0,
+            "Ports": {
+                "8000/tcp": null,
+                "8005/tcp": [
+                    {
+                        "HostIp": "0.0.0.0",
+                        "HostPort": "8005"
+                    }
+                ]
+            },
+            "SandboxKey": "/var/run/docker/netns/a9d501133355",
+            "SecondaryIPAddresses": null,
+            "SecondaryIPv6Addresses": null,
+            "EndpointID": "",
+            "Gateway": "",
+            "GlobalIPv6Address": "",
+            "GlobalIPv6PrefixLen": 0,
+            "IPAddress": "",
+            "IPPrefixLen": 0,
+            "IPv6Gateway": "",
+            "MacAddress": "",
+            "Networks": {
+                "jwtdheeraj_default": {
+                    "IPAMConfig": null,
+                    "Links": null,
+                    "Aliases": [
+                        "backend",
+                        "backend",
+                        "5f8333c46e92"
+                    ],
+                    "NetworkID": "3f7bb754be22ba9bf0c5dc95f518b4341596208e6b475f00f0e793dcfd6ea29e",
+                    "EndpointID": "812423b2e8349cbc8b1bf2f9bd18fc116d1144dbf8662c03f5b3560569420927",
+                    "Gateway": "172.19.0.1",
+                    "IPAddress": "172.19.0.3",
+                    "IPPrefixLen": 16,
+                    "IPv6Gateway": "",
+                    "GlobalIPv6Address": "",
+                    "GlobalIPv6PrefixLen": 0,
+                    "MacAddress": "02:42:ac:13:00:03",
+                    "DriverOpts": null
+                }
+            }
+        }
+    }
+]
+PS D:\Bootcamp-Labs\titus\JwtDheeraj> 
