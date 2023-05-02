@@ -5,18 +5,16 @@ import { zodResolver } from "@hookform/resolvers/zod";
 import { useNavigate } from "react-router-dom";
 import { useEffect } from "react";
 import { toast } from "react-toastify";
-import userEvent from "@testing-library/user-event";
 import { Container, Box, Typography } from "@mui/material";
 import { LoadingButton as _LoadingButton } from "@mui/lab";
-import { useRegisterUserMutation } from "../redux/api/authApi";
+import { useLoginUserMutation } from "../redux/api/authApi";
 import FormInput from "../components/FormInput";
 
 const LoadingButton = styled(_LoadingButton)`
   background-color: black;
 `;
 
-const registerSchema = object({
-  name: string().min(1, "Full name is required").max(100),
+const loginSchema = object({
   email: string()
     .min(1, "Email is required")
     .email("Email address is not valid"),
@@ -24,20 +22,16 @@ const registerSchema = object({
     .min(1, "Password is required")
     .min(8, "Password must be at least 8 characters long")
     .max(32, "Must be less than 32 characters"),
-  passwordConfirm: string().min(1, "Password is required"),
-}).refine((data) => data.password === data.passwordConfirm, {
-  path: ["passwordConfirm"],
-  message: `Passwords do not match ! `,
 });
 
-export type RegisterInput = TypeOf<typeof registerSchema>;
+export type LoginInput = TypeOf<typeof loginSchema>;
 
-const RegisterPage = () => {
-  const methods = useForm<RegisterInput>({
-    resolver: zodResolver(registerSchema),
+const LoginPage = () => {
+  const methods = useForm<LoginInput>({
+    resolver: zodResolver(loginSchema),
   });
-  const [registerUser, { isLoading, isSuccess, error, isError, data }] =
-    useRegisterUserMutation();
+  const [loginUser, { isLoading, isSuccess, error, isError, data }] =
+    useLoginUserMutation();
   const navigate = useNavigate();
   const {
     reset,
@@ -48,33 +42,22 @@ const RegisterPage = () => {
   useEffect(() => {
     if (isSuccess) {
       toast.success(data?.message);
-      navigate("/verifyemail");
+      navigate("/dashboard");
     }
-  }, [isSuccess, data, navigate]);
+
+    if (isError) {
+      toast.error((error as any).data.message, { position: "top-right" });
+    }
+  }, [isLoading]);
 
   useEffect(() => {
     if (isSubmitSuccessful) {
       reset();
     }
-  }, [isSubmitSuccessful, reset]);
+  }, []);
 
-  const onSubmitHandler: SubmitHandler<RegisterInput> = (values) => {
-    registerUser(values)
-      .unwrap()
-      .then(() => {
-        // handle success
-      })
-      .catch((error) => {
-        if (error.status === 400 && Array.isArray(error.data?.error)) {
-          error.data.error.forEach((element: any) => {
-            toast.error(element.message, { position: "top-right" });
-          });
-        } else if (error?.data?.message) {
-          toast.error(error.data.message, { position: "top-right" });
-        } else {
-          toast.error(error.message, { position: "top-right" });
-        }
-      });
+  const onSubmitHandler: SubmitHandler<LoginInput> = (values) => {
+    loginUser(values);
   };
 
   return (
@@ -96,7 +79,7 @@ const RegisterPage = () => {
           flexDirection: "column",
         }}
       >
-        <Typography> Welcome to my Registration</Typography>
+        <Typography> Welcome to my Login</Typography>
 
         <FormProvider {...methods}>
           <Box
@@ -105,21 +88,15 @@ const RegisterPage = () => {
             width="100%"
             onSubmit={handleSubmit(onSubmitHandler)}
           >
-            <FormInput name="name" label="full name"></FormInput>
             <FormInput
               name="email"
               type="email"
-              label="enter the email"
+              label="Enter the email"
             ></FormInput>
             <FormInput
               name="password"
               type="password"
-              label="enter the password"
-            ></FormInput>
-            <FormInput
-              name="passwordConfirm"
-              type="password"
-              label="confirm the password"
+              label="Enter the password"
             ></FormInput>
 
             <LoadingButton
@@ -129,7 +106,7 @@ const RegisterPage = () => {
               disableElevation
               fullWidth
             >
-              Sign Up
+              Log In
             </LoadingButton>
           </Box>
         </FormProvider>
@@ -138,4 +115,4 @@ const RegisterPage = () => {
   );
 };
 
-export default RegisterPage;
+export default LoginPage;

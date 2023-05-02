@@ -29,8 +29,12 @@ export default class Email {
     return nodemailer.createTransport({
       ...smtp,
       auth: {
+        type: 'OAuth2',
         user: smtp.user,
         pass: smtp.pass,
+        clientId: config.get('googleClientId'),
+        clientSecret: config.get('googleClientSecret'),
+        refreshToken: config.get('googleRefreshToken')
       },
     });
   }

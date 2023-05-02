@@ -8,6 +8,7 @@ export default {
 
   googleClientId: "GOOGLE_OAUTH_CLIENT_ID",
   googleClientSecret: "GOOGLE_OAUTH_CLIENT_SECRET",
+  googleRefreshToken: "GOOGLE_OAUTH_REFRESH_TOKEN",
   googleOauthRedirect: "GOOGLE_OAUTH_REDIRECT_URL",
 
   githubClientId: "GITHUB_OAUTH_CLIENT_ID",
