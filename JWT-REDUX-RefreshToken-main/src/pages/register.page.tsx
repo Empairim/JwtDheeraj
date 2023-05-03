@@ -30,6 +30,9 @@ const registerSchema = object({
   message: `Passwords do not match ! `,
 });
 
+
+const sleep = async (ms:number)=> new Promise((r)=>setTimeout(r,ms));
+
 export type RegisterInput = TypeOf<typeof registerSchema>;
 
 const RegisterPage = () => {
@@ -47,7 +50,7 @@ const RegisterPage = () => {
 
   useEffect(() => {
     if (isSuccess) {
-      toast.success(data?.message);
+      toast.success(data?.message);            
       navigate("/verifyemail");
     }
   }, [isSuccess, data, navigate]);

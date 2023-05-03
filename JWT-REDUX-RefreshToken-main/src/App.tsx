@@ -5,9 +5,16 @@ import { Route, Routes } from "react-router-dom";
 import RegisterPage from "./pages/register.page";
 import LoginPage from "./pages/login.page";
 
+import { ToastContainer } from "react-toastify";
+import { CssBaseline } from "@mui/material";
+
+import 'react-toastify/dist/ReactToastify.css'
+
 function App() {
   return (
-    <div className="App">
+    <>
+    <CssBaseline/>
+    <ToastContainer/>
       <Routes>
         <Route path="/" element={<RegisterPage />} />
         <Route path="/login" element={<LoginPage />} />
@@ -15,7 +22,7 @@ function App() {
           <Route path=":verificationCode" />
         </Route>
       </Routes>
-    </div>
+      </>
   );
 }
 
