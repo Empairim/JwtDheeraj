@@ -5,11 +5,11 @@
 # Mulistage Build for CI & CD 
 # Stage 0 we call it as "Build-Stage", based on Node js to build and compile tghe front end 
 # FROM tiangolo/node-frontend:10 as build-stage
-FROM node As devlopment
+FROM node As development
 WORKDIR /node/app
 COPY . .
 
-ARG NODE_ENV=devlopment
+ARG NODE_ENV=development
 ENV NODE_ENV=${NODE_ENV}
 ARG SERVER_PORT=8000
 ENV SERVER_PORT=${SERVER_PORT}
