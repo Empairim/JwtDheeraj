@@ -7,7 +7,7 @@ import LoginPage from "./pages/login.page";
 
 import { ToastContainer } from "react-toastify";
 import { CssBaseline } from "@mui/material";
-
+import Layout from './components/CommonLayout'
 import 'react-toastify/dist/ReactToastify.css'
 
 function App() {
@@ -16,7 +16,12 @@ function App() {
     <CssBaseline/>
     <ToastContainer/>
       <Routes>
-        <Route path="/" element={<RegisterPage />} />
+        <Route path="/" element={<Layout/>}>
+            {/* Privare and public routes  */}
+            {/* Roles in my CRM  ROle Based Routing */}
+            <Route path="profile" element={<ProfilePage/>}></Route>
+        </Route>
+        <Route path="/register" element={<RegisterPage />} />
         <Route path="/login" element={<LoginPage />} />
         <Route path="verifyemail">
           <Route path=":verificationCode" />

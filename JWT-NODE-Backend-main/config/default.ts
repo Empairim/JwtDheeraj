@@ -3,5 +3,5 @@ export default {
   accessTokenExpiresIn: 1,
   refreshTokenExpiresIn: 59,
   origin: "http://localhost:3000",
-  emailFrom: "contact@codevoweb.com",
+  emailFrom: "dheeraj.singh@snva.com",
 };
