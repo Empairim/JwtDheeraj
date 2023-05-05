@@ -49,7 +49,7 @@ const LoginPage = () => {
        navigate("/profile");
     }
     if (isError) {
-      if(true){
+      if(Array.isArray((error as any).data.error)){
         (error as any).data.error.forEach((el:any)=> toast.error((error as any).data.message, { position:"top-right"    }));
       }
       else{

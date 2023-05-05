@@ -4,8 +4,10 @@ import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 import { Provider } from 'react-redux';
+import {CookiesProvider} from "react-cookie"
 import {store} from "./redux/store"
 import {BrowserRouter as Router}  from "react-router-dom"
+import AuthMiddleware from './Helpers/AuthMiddleware';
 
 const root = ReactDOM.createRoot(
   document.getElementById('root') as HTMLElement
@@ -14,7 +16,11 @@ root.render(
   <React.StrictMode>
     <Provider store={store}>
       <Router>
-          <App />
+        <CookiesProvider>
+          <AuthMiddleware>
+            <App />
+          </AuthMiddleware>
+        </CookiesProvider>
       </Router>
     </Provider>
   </React.StrictMode>

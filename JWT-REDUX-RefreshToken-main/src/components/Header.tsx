@@ -17,7 +17,7 @@ const Header = () => {
             window.localStorage.href = '/login'
         }
         if (isError) {
-            if (true) {
+            if (Array.isArray((error as any).data.error)) {
                 (error as any).data.error.forEach((el: any) => toast.error((error as any).data.message, { position: "top-right" }));
             }
             else {
@@ -42,7 +42,11 @@ const Header = () => {
                         </Typography>
 
                         <Box display='flex' sx={{ml:'auto'}}>
-                            {!user && ('WORK FOR USER Login & Register')}
+                            {!user && (<>
+                                <LoadingButton onClick={()=>navigate('/register')}>SignUp</LoadingButton>
+                                <LoadingButton onClick={()=>navigate('/login')}>Login</LoadingButton>
+                                
+                                </>)}
                             { user && (<LoadingButton onClick={onLogoutHandler}>Logout</LoadingButton>)}
                         </Box>
                     </Toolbar>

@@ -20,12 +20,12 @@ const RequireUser = ({allowedRoles}:{allowedRoles:string[]})=>{
     })
 
 
-    console.log("User Instance")
-    console.log(+user)
-    console.log("User Cookies")
-    console.log(cookies.logged_in)
+    // console.log("User Instance")
+    // console.log(+user)
+    // console.log("User Cookies")
+    // console.log(cookies.logged_in)
     if(loading){
-        return <span>Strill Loading</span>
+        return <Loader></Loader>
     }
 
     return( cookies.logged_in || user) && allowedRoles.includes(user?.role as string)? (<Outlet></Outlet>)
