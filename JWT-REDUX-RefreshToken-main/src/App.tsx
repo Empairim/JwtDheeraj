@@ -9,6 +9,8 @@ import { ToastContainer } from "react-toastify";
 import { CssBaseline } from "@mui/material";
 import Layout from './components/CommonLayout'
 import 'react-toastify/dist/ReactToastify.css'
+import ProfilePage from "./pages/profile.page";
+import RequireUser from "./components/Barrier";
 
 function App() {
   return (
@@ -18,8 +20,10 @@ function App() {
       <Routes>
         <Route path="/" element={<Layout/>}>
             {/* Privare and public routes  */}
-            {/* Roles in my CRM  ROle Based Routing */}
-            <Route path="profile" element={<ProfilePage/>}></Route>
+            {/* Roles in my CRM  ROle Based Routing // authorization and authentication */}
+            <Route element={<RequireUser allowedRoles={['admin','user']}/>}>
+
+            </Route>
         </Route>
         <Route path="/register" element={<RegisterPage />} />
         <Route path="/login" element={<LoginPage />} />
