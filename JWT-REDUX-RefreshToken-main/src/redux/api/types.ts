@@ -2,10 +2,12 @@
 export interface IUser {
   name: string; // The name of the user
   email: string; // The email address of the user
+  photo:string;
   role: string; // The role of the user (e.g., admin, user)
   _id: string; // The unique identifier for the user
-  createdAt: Date; // The date the user was created
-  updateAt: Date; // The date the user was last updated
+  id: string; // The unique identifier for the user
+  createdAt: string; // The date the user was created
+  updateAt: string; // The date the user was last updated
   __v: number; // The version number of the user object (used for concurrency control)
 }
 

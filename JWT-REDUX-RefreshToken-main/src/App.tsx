@@ -13,22 +13,25 @@ import ProfilePage from "./pages/profile.page";
 import RequireUser from "./components/Barrier";
 import Unauthorized from "./pages/unauthorised";
 
+
 function App() {
   return (
     <>
     <CssBaseline/>
     <ToastContainer/>
       <Routes>
-        <Route path="/" element={<Layout/>}>
-            {/* Privare and public routes  */}
+        {/* Privare and public routes  */}
             {/* Roles in my CRM  ROle Based Routing // authorization and authentication */}
             {/* // later we will get it from apis  */}
+        <Route path="/" element={<Layout/>}>
             <Route element={<RequireUser allowedRoles={['admin','user']}/>}>  
                <Route path="profile" element={<ProfilePage />} />
+               
             </Route>
         </Route>
         <Route path="/register" element={<RegisterPage />} />
         <Route path="/login" element={<LoginPage />} />
+        <Route path="/logout" element={<LoginPage />} />
         <Route path="/unauthorized" element={<Unauthorized />} />
         <Route path="verifyemail">
           <Route path=":verificationCode" />

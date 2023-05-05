@@ -7,6 +7,7 @@ import customFetchBase from "./customFetchBase";
 import { createApi, fetchBaseQuery } from "@reduxjs/toolkit/query/react";
 // Import the GenericResponse type
 import { GenericResponse } from "./types";
+import { userApi } from "./userApi";
 
 // Get the base URL for the backend server from the environment variables
 const BASE_URL = process.env.REACT_APP_BACKEND_SERVER_ENDPOINT as string;
@@ -37,15 +38,31 @@ export const authApi = createApi({
       },
     }),
     // Define the loginUser mutation
-    loginUser: builder.mutation<GenericResponse, LoginInput>({
-      query(credentials) {
+    loginUser: builder.mutation<{access_token:string, status:string},LoginInput>
+    ({
+      query(data) {
         return {
           url: "auth/login", // The URL for the login endpoint
           method: "POST", // The HTTP method to use for the request
-          body: credentials, // The credentials to send in the request body
+          body: data, // The credentials to send in the request body
+          credentials:"include"
         };
       },
+      async onQueryStarted(args, {dispatch, queryFulfilled}){
+        try{
+          await queryFulfilled;
+          await dispatch(userApi.endpoints.getMe.initiate(null));
+        }catch(error){}
+      }
     }),
+    logoutUser: builder.mutation<void,void>({
+      query(){
+        return {
+          url:"auth/logout",
+          credentials:'include'
+        }
+      }
+    })
   }),
 });
 
@@ -54,4 +71,5 @@ export const {
   useRegisterUserMutation,
   useVerifyEmailMutation,
   useLoginUserMutation,
+  useLogoutUserMutation,
 } = authApi;

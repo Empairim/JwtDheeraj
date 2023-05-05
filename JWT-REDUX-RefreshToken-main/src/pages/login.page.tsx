@@ -2,7 +2,7 @@ import { SubmitHandler, useForm, FormProvider } from "react-hook-form";
 import { object, string, TypeOf } from "zod";
 import { styled } from "@mui/material/styles";
 import { zodResolver } from "@hookform/resolvers/zod";
-import { useNavigate } from "react-router-dom";
+import { useLocation, useNavigate } from "react-router-dom";
 import { useEffect } from "react";
 import { toast } from "react-toastify";
 import { Container, Box, Typography } from "@mui/material";
@@ -33,6 +33,10 @@ const LoginPage = () => {
   const [loginUser, { isLoading, isSuccess, error, isError, data }] =
     useLoginUserMutation();
   const navigate = useNavigate();
+  const location = useLocation();
+
+// const from = ((location.state as any)?.from.pathname as string) || '/'
+
   const {
     reset,
     handleSubmit,
@@ -41,12 +45,18 @@ const LoginPage = () => {
 
   useEffect(() => {
     if (isSuccess) {
-      toast.success(data?.message);
-      navigate("/dashboard");
+      toast.success("You logged in successfully !");
+       navigate("/profile");
     }
-
     if (isError) {
-      toast.error((error as any).data.message, { position: "top-right" });
+      if(true){
+        (error as any).data.error.forEach((el:any)=> toast.error((error as any).data.message, { position:"top-right"    }));
+      }
+      else{
+        toast.error((error as any).data.message, {
+          position:"top-right"
+        });
+      }
     }
   }, [isLoading]);
 

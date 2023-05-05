@@ -17,7 +17,10 @@ export const store = configureStore({
   // The middleware configuration is set up, with the getDefaultMiddleware function used to get
   // the default middleware and the authApi.middleware added to the middleware stack.
   middleware: (getDefaultMiddleware) =>
-    getDefaultMiddleware({}).concat([authApi.middleware]),
+    getDefaultMiddleware({}).concat(
+      [authApi.middleware, userApi.middleware]
+     
+      ),
 });
 
 // RootState and AppDispatch types are derived from the store to ensure type safety when using Redux with TypeScript.
