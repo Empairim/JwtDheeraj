@@ -11,6 +11,7 @@ import Layout from './components/CommonLayout'
 import 'react-toastify/dist/ReactToastify.css'
 import ProfilePage from "./pages/profile.page";
 import RequireUser from "./components/Barrier";
+import Unauthorized from "./pages/unauthorised";
 
 function App() {
   return (
@@ -21,12 +22,14 @@ function App() {
         <Route path="/" element={<Layout/>}>
             {/* Privare and public routes  */}
             {/* Roles in my CRM  ROle Based Routing // authorization and authentication */}
-            <Route element={<RequireUser allowedRoles={['admin','user']}/>}>
-
+            {/* // later we will get it from apis  */}
+            <Route element={<RequireUser allowedRoles={['admin','user']}/>}>  
+               <Route path="profile" element={<ProfilePage />} />
             </Route>
         </Route>
         <Route path="/register" element={<RegisterPage />} />
         <Route path="/login" element={<LoginPage />} />
+        <Route path="/unauthorized" element={<Unauthorized />} />
         <Route path="verifyemail">
           <Route path=":verificationCode" />
         </Route>
